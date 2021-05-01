@@ -1,0 +1,25 @@
+Installation on Mac
+--------------------
+
+from kafka project website > download 
+download the .tgz mirror file as shown 
+https://downloads.apache.org/kafka/2.8.0/kafka_2.13-2.8.0.tgz
+
+mkdir downloads
+cd downloads
+curl https://downloads.apache.org/kafka/2.8.0/kafka_2.13-2.8.0.tgz -o kafka.tgz
+mkdir kafka 
+tar -xvzf ~/Desktop/code_local/kafka_python/kafka_python/downloads/kafka.tgz --strip 1
+
+install java 
+brew install homebrew/cask/java
+java --version
+to git rid of the annoying message 
+https://www.oracle.com/java/technologies/javase-jdk16-downloads.html
+download and install mac 
+
+
+
+
+Explore installed Kafka
+-----------------------
