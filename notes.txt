@@ -23,3 +23,10 @@ download and install mac
 
 Explore installed Kafka
 -----------------------
+kafka is set of executable scripts 
+
+To start kafka first you need to start zookeeper
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+Start kafka 
+bin/kafka-server-start.sh config/server.properties
