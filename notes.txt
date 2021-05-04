@@ -30,3 +30,19 @@ bin/zookeeper-server-start.sh config/zookeeper.properties
 
 Start kafka 
 bin/kafka-server-start.sh config/server.properties
+
+in server.log in the log lines the path for the logs found /tmp/kafka-logs
+cd /tmp/kafka-logs
+ls
+This folder responsible for logging the kafka messages
+
+cd /tmp/zookeeper
+zookeeper logs folder 
+
+as mentioned in server.properties
+zookeeper localhost:2181
+broker    localhost:9092
+
+
+create kafka topic
+
