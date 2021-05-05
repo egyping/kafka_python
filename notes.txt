@@ -45,4 +45,48 @@ broker    localhost:9092
 
 
 create kafka topic
+bin/kafka-topics.sh --create --bootstrap-server 127.0.0.1:9092 --topic ProductsTopic
+>>logs<<
+[2021-05-06 01:57:23,239] INFO [Partition ProductsTopic-0 broker=0] Log loaded for partition ProductsTopic-0 with initial high watermark 0 (kafka.cluster.Partition)
+** new folder created at > /tmp/kafka-logs > ProductsTopic-0
+ProductsTopic-0 == partition 
+
+List topics in brokers
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --list
+
+Get topic details 
+bin/kafka-topics.sh --bootstrap-server localhost:9092 --describe --topic ProductsTopic
+Topic: ProductsTopic    TopicId: rkp23uhES56oF6g05AFcQw PartitionCount: 1       ReplicationFactor: 1    Configs: segment.bytes=1073741824
+        Topic: ProductsTopic    Partition: 0    Leader: 0       Replicas: 0     Isr: 0
+
+
+Produce messages to the ProductsTopic via default kafka producer 
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic ProductsTopic
+>message 1
+>message 2
+
+Consume messages in this topic 
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic ProductsTopic
+it will show blank untill you add more product in the producer then it will show automatically 
+
+Consume old messages from begining 
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic ProductsTopic --from-beginning
+it will show all the messages 
+
+TRY TO USER TWO PRODUCERS AND TWO CONSUMERS
+
+kafka messages stored at 
+cat /tmp/kafka-logs/ProductsTopic-0/00000000000000000000.log
+
+
+
+
+
+
+
+
+
+
+
+
 
